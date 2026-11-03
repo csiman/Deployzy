@@ -3,365 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>保护和平，反对战争 | Protect Peace, Oppose War</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>守护蓝色星球 - 我们赖以生存的家园</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+        /* 核心样式设置 */
+        :root {
+            --primary-green: #2d6a4f;
+            --earth-blue: #0077b6; /* 调整为更鲜亮的蓝色以呼应主题 */
+            --accent-color: #74c69d;
+            --text-light: #f8f9fa;
         }
-        
+
         body {
-            background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 20, 40, 0.9)), 
-                        url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f0f2f0;
+        }
+
+        /* 顶部横幅 - 已更新背景图 */
+        header {
+            height: 80vh;
+            /* 新的蓝色地球背景图 */
+            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=cover&w=1920&q=80');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            color: white;
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            padding: 20px;
+            align-items: center;
+            color: white;
             text-align: center;
+            padding: 0 20px;
         }
-        
+
+        header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 15px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            max-width: 700px;
+            font-weight: 300;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        /* 核心内容区 */
         .container {
             max-width: 1000px;
-            width: 100%;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .header {
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .peace-icon {
-            font-size: 80px;
-            color: #FFD700;
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-        }
-        
-        h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-            line-height: 1.2;
-        }
-        
-        .chinese-title {
-            color: #FFD700;
-            font-weight: 700;
-            letter-spacing: 2px;
-        }
-        
-        .english-title {
-            font-size: 36px;
-            color: #87CEEB;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-        
-        .content-row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-        
-        .image-container {
-            flex: 1;
-            min-width: 300px;
-            max-width: 450px;
-        }
-        
-        .image-frame {
+            margin: -60px auto 50px; /* 稍微向上移动，增加重叠感 */
+            background: white;
+            padding: 40px;
             border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-            transition: transform 0.5s;
-            border: 5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            position: relative; /* 确保在 header 之上 */
+            z-index: 10;
         }
-        
-        .image-frame:hover {
-            transform: scale(1.03);
-        }
-        
-        .image-frame img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-        
-        .text-container {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            text-align: left;
-        }
-        
-        .message-box {
-            background-color: rgba(0, 40, 85, 0.7);
-            border-radius: 15px;
-            padding: 25px;
-            margin-bottom: 25px;
-            border-left: 5px solid #FFD700;
-        }
-        
-        h2 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #FFD700;
-            display: flex;
-            align-items: center;
-        }
-        
-        h2 i {
-            margin-right: 10px;
-        }
-        
-        .chinese-text {
-            font-size: 20px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-        
-        .english-text {
-            font-size: 18px;
-            line-height: 1.5;
-            color: #E0F7FF;
-            font-style: italic;
-        }
-        
-        .quote {
-            font-size: 24px;
-            font-weight: 600;
-            color: #FFD700;
+
+        .section-title {
             text-align: center;
-            margin: 30px 0;
-            padding: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--primary-green);
+            margin-bottom: 10px;
         }
-        
-        .peace-symbols {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
+
+        .section-subtitle {
+            text-align: center;
+            color: #777;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
             margin-top: 30px;
         }
-        
-        .symbol {
+
+        .card {
+            padding: 25px;
+            border-left: 5px solid var(--accent-color);
+            background: #f9fdfb;
+            border-radius: 0 8px 8px 0;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateX(5px);
+        }
+
+        .card h3 {
+            color: var(--earth-blue);
+            margin-top: 0;
+        }
+
+        /* 小知识网格样式 */
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .fact-card {
+            background: #f0f9ff; /* 淡淡的蓝色背景 */
+            padding: 30px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 120px;
+            text-align: center;
+            border: 1px solid #e0f2fe;
         }
-        
-        .symbol i {
-            font-size: 40px;
-            color: #FFD700;
-            margin-bottom: 10px;
+
+        .fact-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 119, 182, 0.1);
+            background: #e0f2fe;
         }
-        
-        .symbol span {
-            font-size: 16px;
-            color: #87CEEB;
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
-        
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            font-size: 16px;
-            color: #87CEEB;
+
+        .fact-card h4 {
+            margin: 10px 0;
+            color: var(--earth-blue);
+            font-size: 1.2rem;
         }
-        
+
+        .fact-card p {
+            font-size: 0.95rem;
+            color: #555;
+            margin: 0;
+            line-height: 1.7;
+        }
+
+        /* 分隔线装饰 */
+        .divider {
+            height: 2px;
+            background: linear-gradient(to right, transparent, var(--accent-color), transparent);
+            margin: 70px 0 50px;
+        }
+
+        /* 呼吁行动 */
+        .cta {
+            background-color: var(--primary-green);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+            margin-top: 50px;
+        }
+
+        .cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        .cta button {
+            background: var(--accent-color);
+            color: var(--primary-green);
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta button:hover {
+            transform: scale(1.05);
+            background: white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9rem;
+            color: #888;
+            background: #e9ecef;
+        }
+
+        /* 响应式调整 */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
-            }
-            
-            .english-title {
-                font-size: 28px;
-            }
-            
-            .chinese-text {
-                font-size: 18px;
-            }
-            
-            .english-text {
-                font-size: 16px;
-            }
-            
-            .peace-icon {
-                font-size: 60px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-            
-            .english-title {
-                font-size: 22px;
-            }
-            
-            .peace-icon {
-                font-size: 50px;
-            }
-            
-            .message-box {
-                padding: 20px;
-            }
+            header h1 { font-size: 2.5rem; }
+            header p { font-size: 1.1rem; }
+            .container { padding: 25px; margin-top: -40px; }
+            .fact-card { padding: 20px; }
         }
     </style>
 </head>
 <body>
+
+    <header>
+        <h1>这个星球是我们赖以生存的家园</h1>
+        <p>万物共生，命脉相连。这颗蔚蓝色的星球，值得我们倾尽全力去守护。</p>
+    </header>
+
     <div class="container">
-        <div class="header">
-            <div class="peace-icon">
-                <i class="fas fa-dove"></i>
-            </div>
-            <h1 class="chinese-title">保护和平，反对战争</h1>
-            <h2 class="english-title">Protect Peace, Oppose War</h2>
-        </div>
+        <h2 class="section-title">地球：生命的奇迹</h2>
+        <p class="section-subtitle">理解我们为何必须行动</p>
         
-        <div class="content-row">
-            <div class="image-container">
-                <div class="image-frame">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="和平鸽">
-                </div>
-                <div class="image-frame" style="margin-top: 25px;">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="希望的小女孩">
-                </div>
+        <p style="text-indent: 2em; color: #555; margin-bottom: 30px;">
+            从太空中遥望，我们的家园是一颗由于覆盖了大量海洋而呈现深邃蔚蓝色的美丽星球。她已经存在了约 45 亿年，滋养了无数生命的诞生与演化。然而，随着人类文明的快速发展，这颗蓝色珍珠正面临着前所未有的挑战。保护她，不仅是为了维护生态平衡，更是为了人类自身的延续。每一个微小的绿色选择，都是对这颗星球最深情的告白。
+        </p>
+
+        <div class="grid">
+            <div class="card">
+                <h3>生命的摇篮</h3>
+                <p>地球提供了独一无二的氧气、淡水和适宜的温度，孕育了从微小细菌到蓝鲸等数百万种奇妙生物。</p>
             </div>
-            
-            <div class="text-container">
-                <div class="message-box">
-                    <h2><i class="fas fa-peace"></i> 和平的珍贵</h2>
-                    <p class="chinese-text">和平是人类最宝贵的财富，是社会发展与繁荣的基石。战争只会带来毁灭、痛苦和无数生命的消逝，而和平则孕育希望、创造与美好未来。</p>
-                    <p class="english-text">Peace is humanity's most precious treasure, the foundation for social development and prosperity. War only brings destruction, suffering, and the loss of countless lives, while peace nurtures hope, creation, and a better future.</p>
-                </div>
-                
-                <div class="message-box">
-                    <h2><i class="fas fa-hands-helping"></i> 我们的责任</h2>
-                    <p class="chinese-text">每个人都有责任维护和平，反对战争。通过对话、理解与合作，我们可以解决分歧，建立更加和谐的世界。</p>
-                    <p class="english-text">Everyone has the responsibility to maintain peace and oppose war. Through dialogue, understanding, and cooperation, we can resolve differences and build a more harmonious world.</p>
-                </div>
-                
-                <div class="message-box">
-                    <h2><i class="fas fa-heart"></i> 为了下一代</h2>
-                    <p class="chinese-text">让我们为孩子们创造一个没有战争恐惧的世界，让他们在和平、安全的环境中成长，追逐梦想，拥抱未来。</p>
-                    <p class="english-text">Let us create a world without the fear of war for our children, allowing them to grow up in a peaceful and secure environment, pursue their dreams, and embrace the future.</p>
-                </div>
+            <div class="card">
+                <h3>脆弱的平衡</h3>
+                <p>生态系统环环相扣，牵一发而动全身。海洋酸化、森林退化都在悄悄打破这维持了千万年的微妙平衡。</p>
+            </div>
+            <div class="card">
+                <h3>我们的责任</h3>
+                <p>人类作为具有高度智慧的物种，应当是家园的守护者，而非掠夺者。我们要为子孙后代留下一片蓝天净土。</p>
             </div>
         </div>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">环保冷知识：你不知道的真相</h2>
+        <p class="section-subtitle">用数据看世界，用行动改写未来</p>
         
-        <div class="quote">
-            <p>"和平不是一个理想，而是一种必须。"</p>
-            <p style="font-size: 18px; margin-top: 5px;">"Peace is not an ideal, it is a necessity."</p>
-        </div>
-        
-        <div class="peace-symbols">
-            <div class="symbol">
-                <i class="fas fa-hand-peace"></i>
-                <span>和平手势</span>
-                <span>Peace Sign</span>
+        <div class="knowledge-grid">
+            <div class="fact-card">
+                <div class="icon">☕</div>
+                <h4>“纸杯”不只是纸</h4>
+                <p>大多数纸杯内层都涂有聚乙烯塑料膜，极难回收。使用自带杯，每年可减少约 10 千克的碳排放。</p>
             </div>
-            <div class="symbol">
-                <i class="fas fa-globe-americas"></i>
-                <span>全球和平</span>
-                <span>Global Peace</span>
+
+            <div class="fact-card">
+                <div class="icon">🍔</div>
+                <h4>隐形的水消耗</h4>
+                <p>生产一个汉堡大约需要消耗 2400 升水，这相当于一个人两个月的洗澡用水量。</p>
             </div>
-            <div class="symbol">
-                <i class="fas fa-heartbeat"></i>
-                <span>生命尊重</span>
-                <span>Respect Life</span>
+
+            <div class="fact-card">
+                <div class="icon">📧</div>
+                <h4>邮件也产热</h4>
+                <p>每发送一封带有大附件的电子邮件，大约会产生 50 克二氧化碳。清理垃圾邮件也能为地球减负。</p>
             </div>
-            <div class="symbol">
-                <i class="fas fa-users"></i>
-                <span>人类团结</span>
-                <span>Human Unity</span>
+
+            <div class="fact-card">
+                <div class="icon">👕</div>
+                <h4>快时尚的代价</h4>
+                <p>纺织业排放的温室气体超过了所有国际航班和海运的总和。延长衣服寿命，能有效减少碳足迹。</p>
             </div>
-        </div>
-        
-        <div class="footer">
-            <p>© 2023 和平倡议 | 让我们携手创造一个没有战争的世界</p>
-            <p>© 2023 Peace Initiative | Let's work together to create a world without war</p>
+
+            <div class="fact-card">
+                <div class="icon">🍎</div>
+                <h4>食物浪费</h4>
+                <p>如果“食物浪费”是一个国家，它将是世界上第三大温室气体排放国，仅次于中国和美国。</p>
+            </div>
+
+            <div class="fact-card">
+                <div class="icon">♻️</div>
+                <h4>铝罐的轮回</h4>
+                <p>回收一个铝罐节省的能量足以让一台电视机运行 3 小时。而且，铝是可以 100% 无限次循环利用的。</p>
+            </div>
         </div>
     </div>
 
-    <script>
-        // 和平鸽动画增强
-        const dove = document.querySelector('.peace-icon');
-        dove.addEventListener('mouseover', function() {
-            this.style.transform = 'scale(1.2)';
-            this.style.transition = 'transform 0.3s';
-        });
-        
-        dove.addEventListener('mouseout', function() {
-            this.style.transform = 'scale(1)';
-        });
-        
-        // 添加和平消息轮换
-        const messages = [
-            {chinese: "和平不是没有冲突，而是以和平方式解决冲突的能力。", english: "Peace is not the absence of conflict, but the ability to resolve conflict peacefully."},
-            {chinese: "战争摧毁生命，和平创造生命。", english: "War destroys lives, peace creates lives."},
-            {chinese: "每个孩子都有权在和平中成长。", english: "Every child has the right to grow up in peace."},
-            {chinese: "和平是通往繁荣的唯一道路。", english: "Peace is the only path to prosperity."}
-        ];
-        
-        let currentMessageIndex = 0;
-        const quoteElement = document.querySelector('.quote p');
-        const englishQuoteElement = document.querySelector('.quote p:nth-child(2)');
-        
-        function rotateMessage() {
-            currentMessageIndex = (currentMessageIndex + 1) % messages.length;
-            quoteElement.textContent = `"${messages[currentMessageIndex].chinese}"`;
-            englishQuoteElement.textContent = `"${messages[currentMessageIndex].english}"`;
-            
-            // 添加淡入淡出效果
-            quoteElement.style.opacity = 0;
-            englishQuoteElement.style.opacity = 0;
-            
-            setTimeout(() => {
-                quoteElement.style.transition = 'opacity 0.5s';
-                englishQuoteElement.style.transition = 'opacity 0.5s';
-                quoteElement.style.opacity = 1;
-                englishQuoteElement.style.opacity = 1;
-            }, 10);
-        }
-        
-        // 每8秒更换一次消息
-        setInterval(rotateMessage, 8000);
-        
-        // 点击和平图标也可以更换消息
-        dove.addEventListener('click', rotateMessage);
-    </script>
+    <div class="cta">
+        <h2>爱护家园，从我做起</h2>
+        <p>减少塑料使用、节约每一度电、选择低碳出行，你的每一个小行动都有意义。</p>
+        <button onclick="alert('感谢您的承诺！让我们一起守护这颗美丽的蓝色星球。')">我承诺：付诸行动</button>
+    </div>
+
+    <footer>
+        <p>© 2026 守护蓝色星球行动计划 | 愿星辰大海间，绿意永存，蔚蓝依旧。</p>
+    </footer>
+
 </body>
 </html>
